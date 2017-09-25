@@ -139,10 +139,10 @@ function showDoughnutGm() {
 		datasets: [{
 			data: [progm.toFixed(2), fatgm.toFixed(2), carbgm.toFixed(2), fibgm.toFixed(2)],
 			backgroundColor: [
-			'rgba(233, 30, 99, 1)',
-			'rgba(33, 150, 243, 1)',
-			'rgba(76, 175, 80, 1)',
-			'rgba(255, 235, 59, 1)'
+			'rgba(233, 30, 99, 0.2)',
+			'rgba(33, 150, 243, 0.2)',
+			'rgba(76, 175, 80, 0.2)',
+			'rgba(255, 235, 59, 0.2)'
 			],
 			borderColor: [
 			'rgba(233, 30, 99, 1)',
@@ -176,9 +176,9 @@ function showDoughnutCal() {
 		datasets: [{
 			data: [procal.toFixed(2), fatcal.toFixed(2), carbcal.toFixed(2)],
 			backgroundColor: [
-			'rgba(233, 30, 99, 1)',
-			'rgba(33, 150, 243, 1)',
-			'rgba(76, 175, 80, 1)'
+			'rgba(233, 30, 99, 0.2)',
+			'rgba(33, 150, 243, 0.2)',
+			'rgba(76, 175, 80, 0.2)'
 			],
 			borderColor: [
 			'rgba(233, 30, 99, 1)',
