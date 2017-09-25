@@ -5,10 +5,10 @@ var fatcal, procal, carbcal, fibcal;
 
 function calcBMR (sex, weight, height, age)
 {
-	if (sex = 'male') {
+	if (sex == "Male") {
 		bmr = (10*weight) + (6.25*height) - (5*age) + 5;
 	}
-	else {
+	else if (sex == "Female") {
 		bmr = (10*weight) + (6.25*height) - (5*age) - 161;
 	}
 
@@ -84,7 +84,7 @@ function showBar() {
 			labels: ["Current", "Target"],
 			datasets: [{
 				// label: ,
-				data: [bmr, tgtCalories],
+				data: [calIntake, tgtCalories],
 				backgroundColor: [
 				'rgba(255, 99, 132, 0.2)',
 				'rgba(54, 162, 235, 0.2)'
@@ -137,7 +137,7 @@ function showDoughnutGm() {
 
 	data = {
 		datasets: [{
-			data: [progm, fatgm, carbgm, fibgm],
+			data: [progm.toFixed(2), fatgm.toFixed(2), carbgm.toFixed(2), fibgm.toFixed(2)],
 			backgroundColor: [
 			'rgba(233, 30, 99, 1)',
 			'rgba(33, 150, 243, 1)',
@@ -174,7 +174,7 @@ function showDoughnutCal() {
 
 	data = {
 		datasets: [{
-			data: [procal, fatcal, carbcal],
+			data: [procal.toFixed(2), fatcal.toFixed(2), carbcal.toFixed(2)],
 			backgroundColor: [
 			'rgba(233, 30, 99, 1)',
 			'rgba(33, 150, 243, 1)',
@@ -275,46 +275,47 @@ else if (tgtCalories > 2500) {
 //protein
 if (goal == "protein") {
 	if (exerlevel == "little") {
-		progm = 0.96*weight;
+		progm = (0.96*weight);
 	}
 	else if (exerlevel == "light") {
-		progm = 1.2*weight;
+		progm = (1.2*weight);
 	}
 	else if (exerlevel == "moderate") {
-		progm = 1.32*weight;
+		progm = (1.32*weight);
 	}
 	else if (exerlevel == "heavy") {
-		progm = 1.43*weight;
+		progm = (1.43*weight);
 	}
 	else if (exerlevel == "vheavy") {
-		progm = 1.5*weight;
+		progm = (1.5*weight);
 	}
 }
 else {
 	if (exerlevel == "little") {
-		progm = 0.8*weight;
+		progm = (0.8*weight);
 	}
 	else if (exerlevel == "light") {
-		progm = 1*weight;
+		progm = (1*weight);
 	}
 	else if (exerlevel == "moderate") {
-		progm = 1.1*weight;
+		progm = (1.1*weight);
 	}
 	else if (exerlevel == "heavy") {
-		progm = 1.3*weight;
+		progm = (1.3*weight);
 	}
 	else if (exerlevel == "vheavy") {
-		progm = 1.5*weight;
+		progm = (1.5*weight);
 	}
 }
 
 //fiber
 fibgm = 25;
-fatcal = fatgm * 9;
-procal = progm * 4;
-carbcal = tgtCalories - (fatcal + procal);
+fatcal = (fatgm * 9);
+procal = (progm * 4);
+var temp = fatcal + procal;
+carbcal = tgtCalories - temp;
 
-carbgm = carbcal / 4;
+carbgm = (carbcal / 4);
 
 }
 
