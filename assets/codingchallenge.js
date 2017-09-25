@@ -83,7 +83,7 @@ function showBar() {
 		data: {
 			labels: ["Current", "Target"],
 			datasets: [{
-				label: 'Daily Overall Calorie Requirement',
+				// label: ,
 				data: [bmr, tgtCalories],
 				backgroundColor: [
 				'rgba(255, 99, 132, 0.2)',
@@ -104,8 +104,19 @@ function showBar() {
                    // scaleBeginAtZero : true
                }
            }]
+       },
+        	legend: {
+       			display: false
+       		},
+       		tooltips: {
+       			callbacks: {
+       			label: function(tooltipItem) {
+       			return tooltipItem.yLabel;
+       		}
+       	}
+
        }
-   }
+}
 });
 }
 
@@ -163,18 +174,16 @@ function showDoughnutCal() {
 
 	data = {
 		datasets: [{
-			data: [procal, fatcal, carbcal, 0],
+			data: [procal, fatcal, carbcal],
 			backgroundColor: [
 			'rgba(233, 30, 99, 1)',
 			'rgba(33, 150, 243, 1)',
-			'rgba(76, 175, 80, 1)',
-			'rgba(255, 235, 59, 1)'
+			'rgba(76, 175, 80, 1)'
 			],
 			borderColor: [
 			'rgba(233, 30, 99, 1)',
 			'rgba(33, 150, 243, 1)',
-			'rgba(76, 175, 80, 1)',
-			'rgba(255, 235, 59, 1)'
+			'rgba(76, 175, 80, 1)'
 			],
 			borderWidth: 1
 		}],
@@ -183,8 +192,7 @@ function showDoughnutCal() {
     labels: [
     'Protein',
     'Fat',
-    'Carbohydrates',
-    'Fiber'
+    'Carbohydrates'
     ]
 };
 
