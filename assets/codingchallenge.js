@@ -128,26 +128,26 @@ function showDoughnutGm() {
 		datasets: [{
 			data: [progm, fatgm, carbgm, fibgm],
 			backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(102, 56, 235, 0.2)',
-			'rgba(64, 200, 80, 0.2)',
-			'rgba(54, 162, 235, 0.2)'
+			'rgba(233, 30, 99, 1)',
+			'rgba(33, 150, 243, 1)',
+			'rgba(76, 175, 80, 1)',
+			'rgba(255, 235, 59, 1)'
 			],
 			borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(102, 56, 235, 1)',
-			'rgba(64, 200, 80, 1)',
-			'rgba(54, 162, 235, 1)'
+			'rgba(233, 30, 99, 1)',
+			'rgba(33, 150, 243, 1)',
+			'rgba(76, 175, 80, 1)',
+			'rgba(255, 235, 59, 1)'
 			],
 			borderWidth: 1
 		}],
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
-    'ProGm',
-    'FatGm',
-    'CarbGm',
-    'FibGm'
+    'Protein',
+    'Fat',
+    'Carbohydrates',
+    'Fiber'
     ]
 };
 
@@ -165,26 +165,26 @@ function showDoughnutCal() {
 		datasets: [{
 			data: [procal, fatcal, carbcal, 0],
 			backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(102, 56, 235, 0.2)',
-			'rgba(64, 200, 80, 0.2)',
-			'rgba(54, 162, 235, 0.2)'
+			'rgba(233, 30, 99, 1)',
+			'rgba(33, 150, 243, 1)',
+			'rgba(76, 175, 80, 1)',
+			'rgba(255, 235, 59, 1)'
 			],
 			borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(102, 56, 235, 1)',
-			'rgba(64, 200, 80, 1)',
-			'rgba(54, 162, 235, 1)'
+			'rgba(233, 30, 99, 1)',
+			'rgba(33, 150, 243, 1)',
+			'rgba(76, 175, 80, 1)',
+			'rgba(255, 235, 59, 1)'
 			],
 			borderWidth: 1
 		}],
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
-    'ProCal',
-    'FatCal',
-    'CarbCal',
-    'FibCal'
+    'Protein',
+    'Fat',
+    'Carbohydrates',
+    'Fiber'
     ]
 };
 
