@@ -275,36 +275,36 @@ else if (tgtCalories > 2500) {
 //protein
 if (goal == "protein") {
 	if (exerlevel == "little") {
-		progm = 0.96;
+		progm = 0.96*weight;
 	}
 	else if (exerlevel == "light") {
-		progm = 1.2;
+		progm = 1.2*weight;
 	}
 	else if (exerlevel == "moderate") {
-		progm = 1.32;
+		progm = 1.32*weight;
 	}
 	else if (exerlevel == "heavy") {
-		progm = 1.43;
+		progm = 1.43*weight;
 	}
 	else if (exerlevel == "vheavy") {
-		progm = 1.;
+		progm = 1.5*weight;
 	}
 }
 else {
 	if (exerlevel == "little") {
-		progm = 0.8;
+		progm = 0.8*weight;
 	}
 	else if (exerlevel == "light") {
-		progm = 1;
+		progm = 1*weight;
 	}
 	else if (exerlevel == "moderate") {
-		progm = 1.1;
+		progm = 1.1*weight;
 	}
 	else if (exerlevel == "heavy") {
-		progm = 1.3;
+		progm = 1.3*weight;
 	}
 	else if (exerlevel == "vheavy") {
-		progm = 1.5;
+		progm = 1.5*weight;
 	}
 }
 
