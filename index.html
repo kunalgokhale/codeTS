@@ -33,7 +33,7 @@
 						<td id="weight-result"></td>
 					</tr>
 				</table>
-				<h2>Daily Overall calorie requirement:</h2>
+				<h2>Daily Overall Calorie Intake:</h2>
 				<div>
 					<canvas id="myChart"></canvas>
 				</div>
@@ -43,7 +43,7 @@
 					<canvas id="doughnutGm"></canvas>
 				</div>
 				<div>
-					<p>In Calorie</p>
+					<p>In Calories</p>
 					<canvas id="doughnutCal"></canvas>
 				</div>
 			</div>
@@ -58,48 +58,48 @@
 					<div>
 						<div class="form-group col-sm-12">
 							<label for="fullName">Full Name:</label>
-							<input name="name" id="fullName" type="text" placeholder="John Smith" class="form-control">
+							<input name="name" id="fullName" type="text" placeholder="John Smith" class="form-control" required>
 						</div>
 						<div class="form-group col-sm-12">
 							<label for="email">Email:</label>
-							<input id="email" type="email" placeholder="someone@example.com" class="form-control">
+							<input id="email" type="email" placeholder="someone@example.com" class="form-control" required>
 						</div>
 						<div class="form-group col-sm-12">
 							<label >Gender:</label>
-							<input name="gender" id="male" type="radio" value="Male"> Male</input>
-							<input name="gender" id="female" type="radio" value="Female"> Female</input>
+							<input name="gender" id="male" type="radio" value="Male" required> Male</input>
+							<input name="gender" id="female" type="radio" value="Female" required> Female</input>
 						</div>
 						<div clas="form-group">
 							<div>
 								<label class ="col-sm-1">Age:</label>
 								<div class="col-sm-3">
-									<input type="number" class="form-control" id="age" placeholder="Enter age">
+									<input type="number" class="form-control" id="age" placeholder="Enter age" min="1" max="100" required>
 								</div>
 							</div>
 							<div >
 								<label class ="col-sm-1">Weight:</label>
 								<div class="col-sm-3">
-									<input type="number" class="form-control" id="weight" placeholder="Weight in kg">
+									<input type="number" class="form-control" id="weight" placeholder="Weight in kg" min="1" max="600" required>
 								</div>
 							</div>
 							<div>
 								<label class ="col-sm-1">Height:</label>
 								<div class="col-sm-3">
-									<input type="number" class="form-control" id="height" placeholder="Height in cm">
+									<input type="number" class="form-control" id="height" placeholder="Height in cm" min="30" max="250" required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group col-sm-12 healthDetails">							
-							<label for="exerciseLevel">How intense are your workout sessions?</label><br>
-							<input type="radio" name="exerlvl" value="little" id="el1"> Sedentary - Little to no exercise<br>
-							<input type="radio" name="exerlvl" value="light" id="el2"> Active - Light exercise<br>
-							<input type="radio" name="exerlvl" value="moderate" id="el3"> Fit - Moderate exercise<br>
-							<input type="radio" name="exerlvl" value="heavy" id="el4"> Extra Fit- Heavy exercise<br>
-							<input type="radio" name="exerlvl" value="vheavy" id="el5"> Champion - Very heavy exercise<br>					
+							<label for="exerciseLevel">How active are you?</label><br>
+							<input type="radio" name="exerlvl" value="little" id="el1" checked> Lead a sedentary life (desk job, little to no exercise)<br>
+							<input type="radio" name="exerlvl" value="light" id="el2"> Quite Active (light exercise, walk daily)<br>
+							<input type="radio" name="exerlvl" value="moderate" id="el3"> Considerably Fit (workout regularly with moderate exercise routines)<br>
+							<input type="radio" name="exerlvl" value="heavy" id="el4"> Extra Fit (heavy exercise on a regular basis)<br>
+							<input type="radio" name="exerlvl" value="vheavy" id="el5"> Super active (totally into heavy workout sessions)<br>					
 						</div>
 						<div class="form-group col-sm-12">
 							<label for="healthGoal">What is your goal?</label><br>
-							<input type="radio" name="healthgoal" value="bulk" id="g1"> I want to bulk up<br>
+							<input type="radio" name="healthgoal" value="bulk" id="g1" checked> I want to build up my body<br>
 							<input type="radio" name="healthgoal" value="eathealthy" id="g2"> I want to eat healthy<br>
 							<input type="radio" name="healthgoal" value="lose" id="g3"> I want to lose weight<br>
 							<input type="radio" name="healthgoal" value="protein" id="g4"> I want a high protein diet<br>
@@ -122,28 +122,23 @@
 				<div id="content">
 					<h1 class="form-group">Tell us about yourself</h1>
 					<form method="post" action="javascript:myfunction();" class="col-sm-12">
-
 						<div class="form-group">
 							<label for="fullName" class="col-sm-1">Name:</label>
 							<input name="name" id="fullName" type="text" placeholder="John Smith">
 						</div>
-
 						<div class="form-group">
 							<label for="email" class="col-sm-1">Email:</label>
 							<input id="email" type="email" placeholder="someone@example.com">
 						</div>
-
 						<div class="form-group">
 							<label class="col-sm-1">Gender:</label>
 							<input name="gender" id="male" type="radio" value="male"> Male</input>
 							<input name="gender" id="female" type="radio" value="female"> Female</input>
 						</div>
-
 						<div class="form-group">
 							<label class="col-sm-1">Age: </label>
 							<input id="age" type="number" placeholder="Age in years">
 						</div>
-
 						<div class="form-group">
 							<label class="col-sm-1">Weight: </label>
 							<input id="weight" type="number" placeholder="Weight in kg">
@@ -152,7 +147,6 @@
 							<label class="col-sm-1">Height: </label>
 							<input id="height" type="number" placeholder="Height in cm">
 						</div>
-
 						<div class="form-group">							
 								<label for="exerciseLevel">How intense are your workout sessions?</label><br>
 								<input type="radio" name="exerlvl" value="little" id="el1"> Sedentary - Little to no exercise<br>
@@ -168,7 +162,6 @@
 								<input type="radio" name="healthgoal" value="lose" id="g3"> I want to lose weight<br>
 								<input type="radio" name="healthgoal" value="protein" id="g4"> I want a high protein diet<br>
 						</div>
-
 						<div class="form-group">
 							<br>
 							<button class="btn btn-default">Submit</button>

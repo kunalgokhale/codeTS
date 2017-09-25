@@ -5,10 +5,10 @@ var fatcal, procal, carbcal, fibcal;
 
 function calcBMR (sex, weight, height, age)
 {
-	if (sex = 'male') {
+	if (sex == "Male") {
 		bmr = (10*weight) + (6.25*height) - (5*age) + 5;
 	}
-	else {
+	else if (sex == "Female") {
 		bmr = (10*weight) + (6.25*height) - (5*age) - 161;
 	}
 
@@ -83,8 +83,8 @@ function showBar() {
 		data: {
 			labels: ["Current", "Target"],
 			datasets: [{
-				label: 'Daily Overall Calorie Requirement',
-				data: [bmr, tgtCalories],
+				// label: ,
+				data: [calIntake, tgtCalories],
 				backgroundColor: [
 				'rgba(255, 99, 132, 0.2)',
 				'rgba(54, 162, 235, 0.2)'
@@ -104,8 +104,19 @@ function showBar() {
                    // scaleBeginAtZero : true
                }
            }]
+       },
+        	legend: {
+       			display: false
+       		},
+       		tooltips: {
+       			callbacks: {
+       			label: function(tooltipItem) {
+       			return tooltipItem.yLabel;
+       		}
+       	}
+
        }
-   }
+}
 });
 }
 
@@ -126,28 +137,28 @@ function showDoughnutGm() {
 
 	data = {
 		datasets: [{
-			data: [progm, fatgm, carbgm, fibgm],
+			data: [progm.toFixed(2), fatgm.toFixed(2), carbgm.toFixed(2), fibgm.toFixed(2)],
 			backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(102, 56, 235, 0.2)',
-			'rgba(64, 200, 80, 0.2)',
-			'rgba(54, 162, 235, 0.2)'
+			'rgba(233, 30, 99, 1)',
+			'rgba(33, 150, 243, 1)',
+			'rgba(76, 175, 80, 1)',
+			'rgba(255, 235, 59, 1)'
 			],
 			borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(102, 56, 235, 1)',
-			'rgba(64, 200, 80, 1)',
-			'rgba(54, 162, 235, 1)'
+			'rgba(233, 30, 99, 1)',
+			'rgba(33, 150, 243, 1)',
+			'rgba(76, 175, 80, 1)',
+			'rgba(255, 235, 59, 1)'
 			],
 			borderWidth: 1
 		}],
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
-    'ProGm',
-    'FatGm',
-    'CarbGm',
-    'FibGm'
+    'Protein',
+    'Fat',
+    'Carbohydrates',
+    'Fiber'
     ]
 };
 
@@ -163,28 +174,25 @@ function showDoughnutCal() {
 
 	data = {
 		datasets: [{
-			data: [procal, fatcal, carbcal, 0],
+			data: [procal.toFixed(2), fatcal.toFixed(2), carbcal.toFixed(2)],
 			backgroundColor: [
-			'rgba(255, 99, 132, 0.2)',
-			'rgba(102, 56, 235, 0.2)',
-			'rgba(64, 200, 80, 0.2)',
-			'rgba(54, 162, 235, 0.2)'
+			'rgba(233, 30, 99, 1)',
+			'rgba(33, 150, 243, 1)',
+			'rgba(76, 175, 80, 1)'
 			],
 			borderColor: [
-			'rgba(255,99,132,1)',
-			'rgba(102, 56, 235, 1)',
-			'rgba(64, 200, 80, 1)',
-			'rgba(54, 162, 235, 1)'
+			'rgba(233, 30, 99, 1)',
+			'rgba(33, 150, 243, 1)',
+			'rgba(76, 175, 80, 1)'
 			],
 			borderWidth: 1
 		}],
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
-    'ProCal',
-    'FatCal',
-    'CarbCal',
-    'FibCal'
+    'Protein',
+    'Fat',
+    'Carbohydrates'
     ]
 };
 
@@ -267,47 +275,46 @@ else if (tgtCalories > 2500) {
 //protein
 if (goal == "protein") {
 	if (exerlevel == "little") {
-		progm = 0.96;
+		progm = (0.96*weight);
 	}
 	else if (exerlevel == "light") {
-		progm = 1.2;
+		progm = (1.2*weight);
 	}
 	else if (exerlevel == "moderate") {
-		progm = 1.32;
+		progm = (1.32*weight);
 	}
 	else if (exerlevel == "heavy") {
-		progm = 1.43;
+		progm = (1.43*weight);
 	}
 	else if (exerlevel == "vheavy") {
-		progm = 1.;
+		progm = (1.5*weight);
 	}
 }
 else {
 	if (exerlevel == "little") {
-		progm = 0.8;
+		progm = (0.8*weight);
 	}
 	else if (exerlevel == "light") {
-		progm = 1;
+		progm = (1*weight);
 	}
 	else if (exerlevel == "moderate") {
-		progm = 1.1;
+		progm = (1.1*weight);
 	}
 	else if (exerlevel == "heavy") {
-		progm = 1.3;
+		progm = (1.3*weight);
 	}
 	else if (exerlevel == "vheavy") {
-		progm = 1.5;
+		progm = (1.5*weight);
 	}
 }
 
 //fiber
 fibgm = 25;
-fatcal = fatgm * 9;
-procal = progm * 4;
-carbcal = tgtCalories - (fatcal + procal);
+fatcal = (fatgm * 9);
+procal = (progm * 4);
+var temp = fatcal + procal;
+carbcal = tgtCalories - temp;
 
-carbgm = carbcal / 4;
+carbgm = (carbcal / 4);
 
 }
-
-
