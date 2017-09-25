@@ -83,7 +83,6 @@ function showBar() {
 		data: {
 			labels: ["Current", "Target"],
 			datasets: [{
-				// label: ,
 				data: [calIntake, tgtCalories],
 				backgroundColor: [
 				'rgba(255, 99, 132, 0.2)',
@@ -101,7 +100,6 @@ function showBar() {
 				yAxes: [{
 					ticks: {
 						beginAtZero:true
-                   // scaleBeginAtZero : true
                }
            }]
        },
@@ -165,7 +163,6 @@ function showDoughnutGm() {
 var myDoughnutChart = new Chart(ctx1, {
 	type: 'doughnut',
 	data: data
-    // options: circumference
 });
 }
 
@@ -199,7 +196,6 @@ function showDoughnutCal() {
 var myDoughnutChart = new Chart(ctx1, {
 	type: 'doughnut',
 	data: data
-    // options: circumference
 });
 }
 
@@ -208,23 +204,18 @@ function calcCalIntake(exerlevel)
 	switch(exerlevel) {
 		case 'little':
 		calIntake = 1.2 * bmr;
-		//alert(calIntake);
 		break;
 		case 'light':
 		calIntake = 1.375 * bmr;
-		//alert(calIntake);
 		break;
 		case 'moderate':
 		calIntake = 1.5 * bmr;
-		//alert(calIntake);
 		break;
 		case 'heavy':
 		calIntake = 1.725 * bmr;
-		//alert(calIntake);
 		break;
 		case 'vheavy':
 		calIntake = 1.9 * bmr;
-		//alert(calIntake);
 		break;
 		default:
 		break;
@@ -235,19 +226,15 @@ function calcTgtCalories(goal){
 	switch(goal) {
 		case 'bulk':
 		tgtCalories = bmr + 500;
-		//alert(tgtCalories);
 		break;
 		case 'eathealthy':
 		tgtCalories = bmr;
-		//alert(tgtCalories);
 		break;
 		case 'lose':
 		tgtCalories = bmr - 500;
-		//alert(tgtCalories);
 		break;
 		case 'protein':
 		tgtCalories = bmr;
-		//alert(tgtCalories);
 		break;
 		default:
 		break;
